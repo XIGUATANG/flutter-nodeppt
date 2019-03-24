@@ -1,0 +1,26 @@
+.text-left {
+  text-align: left;
+}
+.logo {
+  width: 36px;
+}
+.background-homepage {
+  background-color: #e4e8ea;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-position: -360px -360px !important;
+}
+.text-blue {
+  color: #0091ea;
+}
+.text-white {
+  color: #fff;
+}
+.bg-app {
+  background-image: url(/img/app.png);
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+}
