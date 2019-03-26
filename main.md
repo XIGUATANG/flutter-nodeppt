@@ -70,10 +70,8 @@ Flutter包含了许多核心的widget，如滚动、导航、图标和字体等�
   :::
   :::
 
-
 <slide class="slide bg-black background light" image="/img/th2.jpg  .light">
-### 移动应用程序开发的简要历史{.content-center.animated.fadeInUp.delay-1200}
-
+### 移动应用程序开发的简要历史{.content-center}
 
 :::column
 :::column
@@ -82,24 +80,19 @@ Flutter包含了许多核心的widget，如滚动、导航、图标和字体等�
 
 <p class="content-center" style="font-size:3.2rem">移动应用程序开发是一个相对较新的领域。 第三方开发人员已经能够在不到十年的时间内开发移动应用程序，所以工具仍在不断发展并不奇怪。</p>
 
-
 <slide class="slide-top bg-white background fullscreen" >
-
 
 :::div{.card-40.bg-white}
 
-
-
 !![](/img/oem.png .aligncenter.h-300)
 
-
-
 :::div{.flex-content.content-left}
+
 ### OEM SDKs
+
 <p>Apple iOS SDK于2008年发布，2009年发布Google Android SDK。这两个SDK分别基于不同的语言：Objective-C和Java。</p>
 <p>您的应用程序会与平台进行交谈，以创建widgets或访问相机等服务。 widgets呈现给屏幕画布，并且事件被传回给widgets。 这是一个简单的架构，但是您几乎必须为每个平台创建单独的应用程序，因为这些widgets是不同的，更不用说语言。</p>
 :::
-
 
 <slide class="slide-top bg-white background fullscreen" >
 :::div{.card-40.bg-white}
@@ -125,7 +118,6 @@ Flutter包含了许多核心的widget，如滚动、导航、图标和字体等�
 :::
 :::
 
-
 <slide class="slide-top bg-white background fullscreen" >
 :::div{.card-40.bg-white}
 !![](/img/flutterframe.png .aligncenter.h-300)
@@ -139,7 +131,6 @@ Dart程序（绿色）和本地平台代码（iOS或Android蓝色）之间仍然
 :::
 :::
 
-
 <slide class="slide-top bg-white background fullscreen" >
 :::div{.card-30.bg-white}
 !![](/img/flutterframe2.png .aligncenter.h-300)
@@ -147,12 +138,25 @@ Dart程序（绿色）和本地平台代码（iOS或Android蓝色）之间仍然
 ### Flutter框架结构
 ##### Flutter Framework是一个完全由Dart语言构建的SDK，它实现了一整套自底而上的基础库。
 
-1. 底部两层(Foundation和Animation、Painting、Gestures)是Flutter引擎暴露的底层UI库，提供动画、手势及绘制能力。
-2. Rendering层是一个抽象的布局层，它依赖于dart UI层。Rendering层会构建一个UI树，当UI树有变化时，它会随即计算出有变化的部分，然后更新UI树，最终将UI树绘制到屏幕上。这个过程类似于React中的虚拟DOM。Rendering层可以说是Flutter UI框架最核心的部分，它除了确定每个UI元素的位置、大小之外，还要进行坐标变换和绘制(调用底层dart:ui)。
-3. Widgets层是Flutter提供的一套基础组件库，在基础组件库之上，Flutter还提供了 Material 和Cupertino两种视觉风格的组件库。
+1. 底部两层(Foundation 和 Animation、Painting、Gestures)是 Flutter 引擎暴露的底层 UI 库，提供动画、手势及绘制能力。
+2. Rendering 层是一个抽象的布局层，它依赖于 dart UI 层。Rendering 层会构建一个 UI 树，当 UI 树有变化时，它会随即计算出有变化的部分，然后更新 UI 树，最终将 UI 树绘制到屏幕上。这个过程类似于 React 中的虚拟 DOM。Rendering 层可以说是 Flutter UI 框架最核心的部分，它除了确定每个 UI 元素的位置、大小之外，还要进行坐标变换和绘制(调用底层 dart:ui)。
+3. Widgets 层是 Flutter 提供的一套基础组件库，在基础组件库之上，Flutter 还提供了 Material 和 Cupertino 两种视觉风格的组件库。
 
 <p>Flutter Engine：这是一个完全由 C++实现的 SDK，其中包括了 Skia引擎、Dart运行时和文字排版引擎等。在代码调用 dart:ui库时，调用最终会走到Engine层，然后实现真正的绘制逻辑。</p>
 :::
 :::
 
+<slide class="slide-top bg-black background light" image="/img/th3.jpeg  .dark">
+### **Why Dart?**
+<p></p>
+1. Dart 的性能更好。Dart在 JIT模式下，速度与 JavaScript基本持平。但是 Dart支持 AOT，当以 AOT模式运行时，JavaScript便远远追不上了。速度的提升对高帧率下的视图数据计算很有帮助。
+2. Native Binding。在 Android 上，v8 的 Native Binding 可以很好地实现，但是 iOS 上的 JavaScriptCore 不可以，所以如果使用 JavaScript，Flutter 基础框架的代码模式就很难统一了。而 Dart 的 Native Binding 可以很好地通过 Dart Lib 实现。
+3. Fuchsia OS，看起来不像原因的一个原因。Fuchsia OS 内置的应用浏览器就是使用 Dart 语言作为 App 的开发语言。而且实际上，Flutter 是 Fuchisa OS 的应用框架概念上的一个子集。（Flutter 源代码和编译工具链也充斥了大量的 Fuchsia 宏）
+4. Dart 是类型安全的语言，拥有完善的包管理和诸多特性。Google 召集了如此多个编程语言界的设计专家开发出这样一门语言，旨在取代 JavaScript，所以 Fuchsia OS 内置了 Dart。Dart 可以作为 embedded lib 嵌入应用，而不用只能随着系统升级才能获得更新，这也是优势之一。
 
+<slide class="slide-top bg-white background light" image="img/hummingbird.png .right-top .hum">
+
+## 不止步于移动平台{.text-intro}
+
+<p>Hummingbird 是一个基于 Web 实现的 Flutter 运行时环境。它利用了 Dart 语言能被编译成 JavaScript 的特性。这个项目让 Flutter 应用程序能够无需改动地运行在标准 Web 平台。</p>
+!![](/img/hum.gif .aligncenter.h-400)

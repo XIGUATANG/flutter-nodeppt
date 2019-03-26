@@ -1,21 +1,26 @@
 .text-left {
   text-align: left;
 }
+
 .logo {
   width: 36px;
 }
+
 .background-homepage {
   background-color: #e4e8ea;
   background-repeat: no-repeat;
   background-position: 0 0;
   background-position: -360px -360px !important;
 }
+
 .text-blue {
   color: #0091ea;
 }
+
 .text-white {
   color: #fff;
 }
+
 .bg-app {
   background-image: url(/img/app.png);
   height: 100%;
@@ -24,20 +29,35 @@
   background-size: 60%;
   background-repeat: no-repeat;
 }
-.pd-50{
+
+.pd-50 {
   padding: 100px 0;
 }
-.h-60{
+
+.h-60 {
   height: 60%;
 }
-.h-80{
-height: 10rem;
+
+.h-80 {
+  height: 10rem;
 }
-.h-400{
-  height: 400px!important;
-  margin: auto!important;
+
+.h-400 {
+  height: 400px !important;
+  margin: auto !important;
 }
-.h-300{
-  height: 300px!important;
-  margin: auto!important;
+
+.h-300 {
+  height: 300px !important;
+  margin: auto !important;
+}
+
+.h-400 {
+  height: 400px !important;
+  margin: auto !important;
+}
+
+.background-hum {
+  background-position: right 10% top 2rem !important;
+  background-size: 60rem;
 }
