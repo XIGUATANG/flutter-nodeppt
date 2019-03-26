@@ -10,7 +10,7 @@ css: [/main.css]
 :::column
 极速构建漂亮的原生应用 {.text-intro.text-blue.animated.fadeInUp.delay-500}
 
-Ethan Tang {.animated.flipInX.delay-1200}
+Ethan Tang {.text-intro.animated.flipInX.delay-1200}
 
 <slide class="bg-gradient-v aligncenter" .slide-top>
 
@@ -70,5 +70,89 @@ Flutter包含了许多核心的widget，如滚动、导航、图标和字体等�
   :::
   :::
 
-<slide class="slide-top bg-black background light" image="/img/th2.jpg  .light">
-## Flutter - 不一样的跨平台解决方案 {.content-center.animated.fadeInUp.delay-500}
+
+<slide class="slide bg-black background light" image="/img/th2.jpg  .light">
+### 移动应用程序开发的简要历史{.content-center.animated.fadeInUp.delay-1200}
+
+
+:::column
+:::column
+:::column
+:::column
+
+<p class="content-center" style="font-size:3.2rem">移动应用程序开发是一个相对较新的领域。 第三方开发人员已经能够在不到十年的时间内开发移动应用程序，所以工具仍在不断发展并不奇怪。</p>
+
+
+<slide class="slide-top bg-white background fullscreen" >
+
+
+:::div{.card-40.bg-white}
+
+
+
+!![](/img/oem.png .aligncenter.h-300)
+
+
+
+:::div{.flex-content.content-left}
+### OEM SDKs
+<p>Apple iOS SDK于2008年发布，2009年发布Google Android SDK。这两个SDK分别基于不同的语言：Objective-C和Java。</p>
+<p>您的应用程序会与平台进行交谈，以创建widgets或访问相机等服务。 widgets呈现给屏幕画布，并且事件被传回给widgets。 这是一个简单的架构，但是您几乎必须为每个平台创建单独的应用程序，因为这些widgets是不同的，更不用说语言。</p>
+:::
+
+
+<slide class="slide-top bg-white background fullscreen" >
+:::div{.card-40.bg-white}
+!![](/img/webview.png .aligncenter.h-300)
+:::div{.flex-content.content-left}
+### WebView
+<p>
+第一个跨平台框架基于JavaScript和WebViews。 例如Titanium和一系列相关的框架：PhoneGap，Apache Cordova，Ionic等等。 在苹果发布iOS SDK之前，他们鼓励第三方开发者为iPhone构建webapps，所以用web技术构建跨平台的应用程序是一个显而易见的步骤。
+</p>
+<p>您的应用程序创建HTML并将其显示在平台上的WebView中。 请注意，像JavaScript这样的语言很难直接与本地代码(like thee services)交谈，所以它们会经历一个在JavaScrip领域和Native 领域之间进行上下文切换的“Bridge”。 因为平台服务通常不是经常被调用的，所以这不会导致太多的性能问题。</p>
+:::
+:::
+
+<slide class="slide-top bg-white background fullscreen" >
+:::div{.card-40.bg-white}
+!![](/img/reactive.png .aligncenter.h-300)
+:::div{.flex-content.content-left}
+### Reactive Views
+<p>
+像ReactJS（和其他）这样的响应式Web框架已经变得流行，主要是因为它们通过使用从响应式编程中借用的编程模式来简化Web视图的创建。 2015年，创建了React Native将响应式视图的诸多好处带给移动应用程序。
+</p>
+<p>React Native非常受欢迎（并且是值得的），但是由于JavaScript领域访问Native领域的OEM widgets，因此它也必须通过这个桥梁。 通常访问widgets的频率非常高（在动画，转换过程中，或者用户用手指在屏幕上滑动某些东西时，每秒可达60次）。</p>
+:::
+:::
+
+
+<slide class="slide-top bg-white background fullscreen" >
+:::div{.card-40.bg-white}
+!![](/img/flutterframe.png .aligncenter.h-300)
+:::div{.flex-content.content-left}
+### Flutter
+<p>
+Flutter有一个新的架构，包括外观和感觉不错，快速，可定制和可扩展的Widgets。 没错，Flutter不使用OEM Widgets（或DOM WebViews），它提供了自己的Widgets
+</p>
+<p>Flutter将Widgets和渲染器从平台移动到应用程序中，从而使其可以自定义和扩展。 Flutter对平台的需求平台是一个画布，在这个画布中，Widgets可以呈现在设备屏幕上，并可以访问事件（触摸，定时器等）和服务（位置，摄像机等）。
+Dart程序（绿色）和本地平台代码（iOS或Android蓝色）之间仍然存在一个接口，可以进行数据编码和解码，但这可能比JavaScript Bridge 快几个数量级。</p>
+:::
+:::
+
+
+<slide class="slide-top bg-white background fullscreen" >
+:::div{.card-30.bg-white}
+!![](/img/flutterframe2.png .aligncenter.h-300)
+:::div{.flex-content.content-left}
+### Flutter框架结构
+##### Flutter Framework是一个完全由Dart语言构建的SDK，它实现了一整套自底而上的基础库。
+
+1. 底部两层(Foundation和Animation、Painting、Gestures)是Flutter引擎暴露的底层UI库，提供动画、手势及绘制能力。
+2. Rendering层是一个抽象的布局层，它依赖于dart UI层。Rendering层会构建一个UI树，当UI树有变化时，它会随即计算出有变化的部分，然后更新UI树，最终将UI树绘制到屏幕上。这个过程类似于React中的虚拟DOM。Rendering层可以说是Flutter UI框架最核心的部分，它除了确定每个UI元素的位置、大小之外，还要进行坐标变换和绘制(调用底层dart:ui)。
+3. Widgets层是Flutter提供的一套基础组件库，在基础组件库之上，Flutter还提供了 Material 和Cupertino两种视觉风格的组件库。
+
+<p>Flutter Engine：这是一个完全由 C++实现的 SDK，其中包括了 Skia引擎、Dart运行时和文字排版引擎等。在代码调用 dart:ui库时，调用最终会走到Engine层，然后实现真正的绘制逻辑。</p>
+:::
+:::
+
+

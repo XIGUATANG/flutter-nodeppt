@@ -24,3 +24,20 @@
   background-size: 60%;
   background-repeat: no-repeat;
 }
+.pd-50{
+  padding: 100px 0;
+}
+.h-60{
+  height: 60%;
+}
+.h-80{
+height: 10rem;
+}
+.h-400{
+  height: 400px!important;
+  margin: auto!important;
+}
+.h-300{
+  height: 300px!important;
+  margin: auto!important;
+}
