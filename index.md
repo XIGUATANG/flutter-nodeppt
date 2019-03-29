@@ -1,14 +1,14 @@
 title: Flutter
 speaker: ethantang
-css: [/main.css]
+css: [./main.css]
 
-<slide class="aligncenter" image="/img/blue-triangle.png .homepage">
+<slide class="aligncenter" image="./img/blue-triangle.png .homepage">
 
-# !![](/flutter.png .logo) Flutter {.text-shadow}
+# !![](./public/img/flutter.png .logo) Flutter {.text-shadow}
 
-:::column
-:::column
-极速构建漂亮的原生应用 {.text-intro.text-blue.animated.fadeInUp.delay-500}
+ <p class="text-intro text-blue animated fadeInUp delay-500 mp-32">
+极速构建漂亮的原生应用
+</p>
 
 Ethan Tang {.text-intro.animated.flipInX.delay-1200}
 
@@ -16,11 +16,9 @@ Ethan Tang {.text-intro.animated.flipInX.delay-1200}
 
 ## Fluter 简介
 
-:::column
-:::column
-Flutter 是谷歌的移动 UI 框架，可以快速在 iOS 和 Android 上构建高质量的原生用户界面。 Flutter 可以与现有的代码一起工作。在全世界，Flutter 正在被越来越多的开发者和组织使用，并且 Flutter 是完全免费、开源的。{.blue.text-intro.text-left.animated.fadeInUp.delay-500}
-:::column
-:::column
+<p  class="blue text-intro text-left animated fadeInUp delay-500 mp-32">
+Flutter 是谷歌的移动 UI 框架，可以快速在 iOS 和 Android 上构建高质量的原生用户界面。 Flutter 可以与现有的代码一起工作。在全世界，Flutter 正在被越来越多的开发者和组织使用，并且 Flutter 是完全免费、开源的。</p>
+
 :::ul{.clients.flexblock.animated.flipInX.delay-1200}
 
 <li>
@@ -56,9 +54,7 @@ Flutter包含了许多核心的widget，如滚动、导航、图标和字体等�
 
 ### 常见 App 框架
 
-:::column
-:::column
-:::div{.content-center}
+:::div{.content-center.mp-32}
 
 - 原生 Native{.aligncenter.animated.fadeInUp.slow.delay-400}
 - ReactNative{.aligncenter.animated.fadeInUp.slow.delay-800s}
@@ -70,21 +66,16 @@ Flutter包含了许多核心的widget，如滚动、导航、图标和字体等�
   :::
   :::
 
-<slide class="slide bg-black background light" image="/img/th2.jpg  .light">
+<slide class="slide bg-black background light" image="./img/th2.jpg  .light">
 ### 移动应用程序开发的简要历史{.content-center}
 
-:::column
-:::column
-:::column
-:::column
-
-<p class="content-center" style="font-size:3.2rem">移动应用程序开发是一个相对较新的领域。 第三方开发人员已经能够在不到十年的时间内开发移动应用程序，所以工具仍在不断发展并不奇怪。</p>
+<p class="content-center mp-32" style="font-size:3.2rem">移动应用程序开发是一个相对较新的领域。 第三方开发人员已经能够在不到十年的时间内开发移动应用程序，所以工具仍在不断发展并不奇怪。</p>
 
 <slide class="slide-top bg-white background fullscreen" >
 
 :::div{.card-40.bg-white}
 
-!![](/img/oem.png .aligncenter.h-300)
+!![](./public/img/oem.png .aligncenter.h-300)
 
 :::div{.flex-content.content-left}
 
@@ -96,7 +87,7 @@ Flutter包含了许多核心的widget，如滚动、导航、图标和字体等�
 
 <slide class="slide-top bg-white background fullscreen" >
 :::div{.card-40.bg-white}
-!![](/img/webview.png .aligncenter.h-300)
+!![](./public/img/webview.png .aligncenter.h-300)
 :::div{.flex-content.content-left}
 ### WebView
 <p>
@@ -108,7 +99,7 @@ Flutter包含了许多核心的widget，如滚动、导航、图标和字体等�
 
 <slide class="slide-top bg-white background fullscreen" >
 :::div{.card-40.bg-white}
-!![](/img/reactive.png .aligncenter.h-300)
+!![](./public/img/reactive.png .aligncenter.h-300)
 :::div{.flex-content.content-left}
 ### Reactive Views
 <p>
@@ -120,7 +111,7 @@ Flutter包含了许多核心的widget，如滚动、导航、图标和字体等�
 
 <slide class="slide-top bg-white background fullscreen" >
 :::div{.card-40.bg-white}
-!![](/img/flutterframe.png .aligncenter.h-300)
+!![](./public/img/flutterframe.png .aligncenter.h-300)
 :::div{.flex-content.content-left}
 ### Flutter
 <p>
@@ -133,7 +124,7 @@ Dart程序（绿色）和本地平台代码（iOS或Android蓝色）之间仍然
 
 <slide class="slide-top bg-white background fullscreen" >
 :::div{.card-30.bg-white}
-!![](/img/flutterframe2.png .aligncenter.h-300)
+!![](./public/img/flutterframe2.png .aligncenter.h-300)
 :::div{.flex-content.content-left}
 ### Flutter框架结构
 ##### Flutter Framework是一个完全由Dart语言构建的SDK，它实现了一整套自底而上的基础库。
@@ -146,7 +137,12 @@ Dart程序（绿色）和本地平台代码（iOS或Android蓝色）之间仍然
 :::
 :::
 
-<slide class="slide-top bg-black background light" image="/img/th3.jpeg  .dark">
+<slide class="slide-top bg-black-blue background light" image="./img/th5.jpg  .dark">
+### 一切都是部件（widget）
+<p class="mp-32">
+在Android和iOS上，部件所对应的就是各种View类。Flutter 采用了不同的概念，部件不仅仅是结构化的元素。Flutter 的部件架构更多地使用了组合，而不是继承，所以部件架构更加强大和灵活。Flutter 官方文档写道：在 Flutter 里，行为也是部件（如 GestureDetector）。InheritedWidget 可用于进行状态管理，AnimatedWidget 可用于构建动画。遵循组合大于集成的原则，Flutter从简单的元部件开始，可以构建出非常复杂的部件。Flutter的Container Widget就是由一系列元部件组成的</p>
+
+<slide class="slide-top bg-black background light" image="./img/th3.jpeg  .dark">
 ### **Why Dart?**
 <p></p>
 1. Dart 的性能更好。Dart在 JIT模式下，速度与 JavaScript基本持平。但是 Dart支持 AOT，当以 AOT模式运行时，JavaScript便远远追不上了。速度的提升对高帧率下的视图数据计算很有帮助。
@@ -159,4 +155,17 @@ Dart程序（绿色）和本地平台代码（iOS或Android蓝色）之间仍然
 ## 不止步于移动平台{.text-intro}
 
 <p>Hummingbird 是一个基于 Web 实现的 Flutter 运行时环境。它利用了 Dart 语言能被编译成 JavaScript 的特性。这个项目让 Flutter 应用程序能够无需改动地运行在标准 Web 平台。</p>
-!![](/img/hum.gif .aligncenter.h-400)
+!![](./public/img/hum.gif .aligncenter.h-400)
+
+<slide class="slide-top bg-black-blue" image="./img/th4.jpg  .dark">
+
+### 目前的不足
+
+<p class="mp-32">Flutter还很年轻，所以肯定会存在一些局限和已知问题，而且未知的问题也会越来越多</p>
+
+1. 框架年轻，轮子较少
+2. 框架成熟度及稳定性仍有待完善。
+3. 首屏渲染时间较长
+4. iOS 包体积过大
+5. 无法保存实例状态（Android）。所以，如果应用在后台被终止，应用状态就会丢失。
+6. 热更新技术缺失，原理上可行。
